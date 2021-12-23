@@ -11,7 +11,6 @@ def load_image(name, colorkey=-1):
         sys.exit()
     image = pygame.image.load(fullname)
     if colorkey is not None:
-        # image = image.convert()
         if colorkey == -1:
             colorkey = image.get_at((0, 0))
         image.set_colorkey(colorkey)
@@ -39,7 +38,7 @@ class Bomb(pygame.sprite.Sprite):
         self.coord_x = 0
 
     def update(self):
-        if self.coord_x < 600:
+        if self.coord_x < 599:
             self.rect.x += 1
             self.coord_x += 1
 
@@ -51,7 +50,7 @@ cords_mouse = None, None
 fps = 200
 clock = pygame.time.Clock()
 while running:
-    screen.fill((0, 0, 0))
+    screen.fill('blue')
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
