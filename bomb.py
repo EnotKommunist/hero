@@ -23,7 +23,7 @@ def load_image(name, colorkey=-1):
 
 
 pygame.init()
-size = width, height = (700, 700)
+size = width, height = (500, 500)
 
 
 class Bomb(pygame.sprite.Sprite):
@@ -46,7 +46,7 @@ class Bomb(pygame.sprite.Sprite):
 
 screen = pygame.display.set_mode(size)
 all_sprites = pygame.sprite.Group()
-for _ in range(50):
+for _ in range(20):
     Bomb(all_sprites)
 running = True
 cords_mouse = None, None
